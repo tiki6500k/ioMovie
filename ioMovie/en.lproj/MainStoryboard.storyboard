@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cF1-xv-Af4">
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="2fk-5q-30j"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="忘記了片名嗎？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBY-Gd-oPZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="w8S-Wt-IKG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="XFU-z4-MHB">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="jy2-Ja-bNI"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="rfz-ap-D5m"/>
+                                    <outlet property="delegate" destination="2" id="G6w-LV-k7X"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XFU-z4-MHB" firstAttribute="top" secondItem="cF1-xv-Af4" secondAttribute="bottom" type="default" id="6sY-Ai-3F9"/>
+                            <constraint firstItem="mBY-Gd-oPZ" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="IbJ-6y-JDg"/>
+                            <constraint firstItem="cF1-xv-Af4" firstAttribute="top" secondItem="3" secondAttribute="top" constant="40" id="NFX-Sp-PEk"/>
+                            <constraint firstItem="XFU-z4-MHB" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="PmQ-fG-WJg"/>
+                            <constraint firstItem="cF1-xv-Af4" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="SP4-nV-cPu"/>
+                            <constraint firstItem="cF1-xv-Af4" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="TL1-Ng-RJc"/>
+                            <constraint firstItem="mBY-Gd-oPZ" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="bVE-Al-rZm"/>
+                            <constraint firstItem="XFU-z4-MHB" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="cyX-Eg-GRw"/>
+                            <constraint firstItem="mBY-Gd-oPZ" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="yBV-NX-EWS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="selfTable" destination="XFU-z4-MHB" id="czS-HG-dK6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="-6"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="selfTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
